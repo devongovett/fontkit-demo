@@ -63,6 +63,7 @@ export default class VariationSelector extends Component {
               type="range"
               min={axes[tag].min}
               max={axes[tag].max}
+              step={0.001}
               value={this.state.variationSettings[tag]}
               onInput={this.onAxisChange.bind(this, tag)} />
           </div>
