@@ -1,0 +1,29 @@
+{
+  "name": "fontkit-demo",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Devon Govett <devongovett@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "autobind-decorator": "^1.4.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "babelify": "^7.3.0",
+    "blob-to-buffer": "^1.2.6",
+    "browserify": "^14.3.0",
+    "fontkit": "^1.6.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4",
+    "preact": "^8.1.0",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.9.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}
