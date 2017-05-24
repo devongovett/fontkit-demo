@@ -20,13 +20,12 @@ export default class PreviewCanvas extends Component {
   }
 
   draw(ctx) {
-    let {font, text, fontSize, width, height} = this.props;
+    let {font, run, fontSize, width, height} = this.props;
 
     ctx.save();
     ctx.scale(this.state.ratio, this.state.ratio);
     ctx.clearRect(0, 0, width, height);
 
-    let run = font.layout(text);
     let scale = 1 / font.unitsPerEm * fontSize;
     let x = 0;
     let y = 0;
