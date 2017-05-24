@@ -16,8 +16,13 @@ export default class VariationSelector extends Component {
       || props.font.subfamilyName
       || 'Custom';
 
+    let font = props.font;
+    if (Object.keys(defaultSettings).length > 0) {
+      font = font.getVariation(defaultSettings);
+    }
+
     this.setState({
-      font: props.font,
+      font: font,
       variationName: defaultVariationName,
       variationSettings: defaultSettings
     });
