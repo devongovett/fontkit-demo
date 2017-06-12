@@ -18,7 +18,8 @@ export default class Preview extends Component {
       fontSize: this.props.fontSize || 50,
       features: {},
       script: null,
-      language: null
+      language: null,
+      direction: null
     };
   }
 
@@ -45,6 +46,12 @@ export default class Preview extends Component {
     });
   }
 
+  onDirChange(e) {
+    this.setState({
+      direction: e.target.value
+    });
+  }
+
   onFeatureChange(feature, e) {
     this.setState({
       features: {...this.state.features, [feature]: e.target.checked}
@@ -53,11 +60,12 @@ export default class Preview extends Component {
 
   render() {
     let font = this.props.font;
-    let run = font.layout(this.state.text, this.state.features, this.state.script, this.state.language);
+    let run = font.layout(this.state.text, this.state.features, this.state.script, this.state.language, this.state.direction);
     let scripts = (font.GSUB ? font.GSUB.scriptList : []).concat(font.GPOS ? font.GPOS.scriptList : []);
     let scriptTags = Array.from(new Set(scripts.map(s => s.tag)));
     let selectedScript = scripts.find(s => s.tag === run.script);
     let languages = selectedScript ? selectedScript.script.langSysRecords : [];
+    let directions = ["ltr", "rtl"];
 
     return (
       <div className="preview">
@@ -78,6 +86,14 @@ export default class Preview extends Component {
             <option>Default</option>
             {languages.map(lang =>
               <option value={lang.tag} selected={run.language === lang.tag}>{lang.tag}</option>
+            )}
+          </select>
+
+          <label>Direction:</label>
+          <select onChange={this.onDirChange}>
+            <option value=''>Default</option>
+            {directions.map(direction =>
+              <option selected={run.direction === direction}>{direction}</option>
             )}
           </select>
 
