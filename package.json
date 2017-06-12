@@ -18,7 +18,7 @@
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
     "preact": "^8.1.0",
-    "uglifyjs": "^2.4.10",
+    "uglify-js": "^2.4.10",
     "watchify": "^3.9.0"
   },
   "browserify": {
