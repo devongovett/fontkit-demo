@@ -23,9 +23,16 @@
       margin-bottom: 10px;
     }
 
+    .preview .font-size label,
     .variation-selector .axis label {
       display: inline-block;
       width: 100px;
+    }
+
+    .preview .font-size input,
+    .variation-selector .axis input {
+      vertical-align: top;
+      vertical-align: -webkit-baseline-middle;
     }
 
     .preview > canvas {
@@ -62,7 +69,8 @@
       margin-top: 20px;
     }
 
-    .preview > label,
+    .variation-selector .axis > label,
+    .preview .font-size > label,
     .feature-selector > label {
       margin: 0 5px;
     }
