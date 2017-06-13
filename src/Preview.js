@@ -70,7 +70,9 @@ export default class Preview extends Component {
     return (
       <div className="preview">
         <PreviewCanvas run={run} text={this.state.text} font={this.props.font} fontSize={this.state.fontSize} features={this.state.features} />
-        <input type="text" value={this.state.text} onInput={this.onTextChange} />
+        <div className="text-input">
+          <input type="text" value={this.state.text} onInput={this.onTextChange} />
+        </div>
         <label>Size: </label><input type="range" min={0} max={100} value={this.state.fontSize} onInput={this.onFontSizeChange} />
 
         <div className="feature-selector">
