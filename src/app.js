@@ -4,10 +4,13 @@ import FontLoader from './FontLoader';
 import CollectionSelector from './CollectionSelector';
 import VariationSelector from './VariationSelector';
 import Preview from './Preview';
+import qs from 'querystring';
+
+const query = qs.parse(window.location.search.slice(1));
 
 const App = () => (
   <div className="app">
-    <FontLoader url="AdobeVFPrototype.otf">
+    <FontLoader url={query.url || "AdobeVFPrototype.otf"}>
       <CollectionSelector>
         <VariationSelector>
           <Preview />
