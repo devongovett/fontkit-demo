@@ -1,16 +1,17 @@
 import 'isomorphic-fetch';
-import Preact, {Component} from 'preact';
+import {Component, h, render} from 'preact';
 import FontLoader from './FontLoader';
 import CollectionSelector from './CollectionSelector';
 import VariationSelector from './VariationSelector';
 import Preview from './Preview';
 import qs from 'querystring';
+import defaultFontUrl from './AdobeVFPrototype.otf';
 
 const query = qs.parse(window.location.search.slice(1));
 
 const App = () => (
   <div className="app">
-    <FontLoader url={query.url || "AdobeVFPrototype.otf"}>
+    <FontLoader url={query.url || defaultFontUrl}>
       <CollectionSelector>
         <VariationSelector>
           <Preview />
@@ -21,4 +22,4 @@ const App = () => (
   </div>
 );
 
-Preact.render(<App />, document.body);
+render(<App />, document.body);

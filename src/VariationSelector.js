@@ -1,5 +1,5 @@
 import autobind from 'autobind-decorator';
-import Preact, {Component} from 'preact';
+import {Component, cloneElement, h} from 'preact';
 import isEqual from 'lodash/isEqual';
 import mapValues from 'lodash/mapValues';
 import findKey from 'lodash/findKey';
@@ -73,7 +73,7 @@ export default class VariationSelector extends Component {
               onInput={this.onAxisChange.bind(this, tag)} />
           </div>
         )}
-        {this.props.children.map(c => Preact.cloneElement(c, {font: this.state.font}))}
+        {this.props.children.map(c => cloneElement(c, {font: this.state.font}))}
       </div>
     );
   }

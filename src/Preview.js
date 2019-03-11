@@ -1,5 +1,5 @@
 import autobind from 'autobind-decorator';
-import Preact, {Component} from 'preact';
+import {Component, h} from 'preact';
 import PreviewCanvas from './PreviewCanvas';
 
 @autobind

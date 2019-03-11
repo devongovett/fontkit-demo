@@ -1,4 +1,4 @@
-import Preact, {Component} from 'preact';
+import {Component, h} from 'preact';
 
 export default class PreviewCanvas extends Component {
   static defaultProps = {

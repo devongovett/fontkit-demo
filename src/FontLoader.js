@@ -1,5 +1,5 @@
 import autobind from 'autobind-decorator';
-import Preact, {Component} from 'preact';
+import {Component, cloneElement, h} from 'preact';
 import fontkit from 'fontkit';
 import blobToBuffer from 'blob-to-buffer';
 
@@ -50,7 +50,7 @@ export default class FontLoader extends Component {
     return (
       <div className="font-loader">
         <input type="file" onChange={this.onChange} />
-        {this.state.font && this.props.children.map(c => Preact.cloneElement(c, {font: this.state.font}))}
+        {this.state.font && this.props.children.map(c => cloneElement(c, {font: this.state.font}))}
       </div>
     );
   }

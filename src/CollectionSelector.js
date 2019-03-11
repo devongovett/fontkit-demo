@@ -1,5 +1,5 @@
 import autobind from 'autobind-decorator';
-import Preact, {Component} from 'preact';
+import {Component, cloneElement, h} from 'preact';
 
 @autobind
 export default class CollectionSelector extends Component {
@@ -33,7 +33,7 @@ export default class CollectionSelector extends Component {
             )}
           </select>
         }
-        {this.props.children.map(c => Preact.cloneElement(c, this.state))}
+        {this.props.children.map(c => cloneElement(c, this.state))}
       </div>
     );
   }
